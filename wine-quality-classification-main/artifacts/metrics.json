@@ -1,0 +1,58 @@
+{
+  "dataset": {
+    "rows": 1599,
+    "train": 1023,
+    "validation": 256,
+    "test": 320,
+    "positive_rate": 0.1357098186366479
+  },
+  "architecture": [
+    "Input: 11 chemical features",
+    "Dense 128, ReLU",
+    "BatchNormalization",
+    "Dropout 0.3",
+    "Dense 64, ReLU",
+    "Dense 32, ReLU",
+    "Dense 1, Sigmoid"
+  ],
+  "hidden_layers": 3,
+  "total_parameters": 12417,
+  "loss_function": "binary_crossentropy",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "batch_size": 32,
+  "max_epochs": 100,
+  "epochs_completed": 25,
+  "early_stopping": "monitor=val_loss, patience=15, restore_best_weights=True",
+  "test_metrics": {
+    "accuracy": 0.8375,
+    "precision": 0.4383561643835616,
+    "recall": 0.7441860465116279,
+    "f1": 0.5517241379310345,
+    "roc_auc": 0.8766686256401646
+  },
+  "confusion_matrix": [
+    [
+      236,
+      41
+    ],
+    [
+      11,
+      32
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n    not good       0.96      0.85      0.90       277\n        good       0.44      0.74      0.55        43\n\n    accuracy                           0.84       320\n   macro avg       0.70      0.80      0.73       320\nweighted avg       0.89      0.84      0.85       320\n",
+  "feature_order": [
+    "fixed acidity",
+    "volatile acidity",
+    "citric acid",
+    "residual sugar",
+    "chlorides",
+    "free sulfur dioxide",
+    "total sulfur dioxide",
+    "density",
+    "pH",
+    "sulphates",
+    "alcohol"
+  ]
+}

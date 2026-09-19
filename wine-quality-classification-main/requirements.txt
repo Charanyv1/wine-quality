@@ -1,8 +1,9 @@
-.\env\numpy
+numpy
 pandas
 matplotlib
 seaborn
 scikit-learn
+joblib
+tensorflow-cpu
 streamlit
 Pillow
-streamlit
