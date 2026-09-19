@@ -1,8 +1,7 @@
-.\env\numpy
+numpy
 pandas
 matplotlib
 seaborn
 scikit-learn
 streamlit
 Pillow
-streamlit

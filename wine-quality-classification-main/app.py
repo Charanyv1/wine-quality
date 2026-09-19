@@ -1,4 +1,6 @@
 # import the libraires
+import os
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,7 +10,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 # load the dataset
-df = pd.read_csv('C:/Users/Balaraj/Downloads/ML_Wine-Quality-Prediction-main/ML_Wine-Quality-Prediction-main/winequality-red.csv')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_csv(os.path.join(BASE_DIR, 'winequality-red.csv'))
 
 df.head()
 
@@ -59,8 +62,9 @@ from PIL import Image
 
 # web app code
 st.title('Wine Quality Prediction Model')
-img = Image.open(r'C:\Users\Balaraj\Downloads\ML_Wine-Quality-Prediction-main\ML_Wine-Quality-Prediction-main\wine_quality.jpg')
-st.image(img, width=120, use_column_width=True)
+img_path = os.path.join(BASE_DIR, 'wine_quality.jpg')
+if os.path.exists(img_path):
+    st.image(Image.open(img_path), width=120, use_container_width=True)
 
 input_values = st.text_input('Enter all Wine Features (comma-separated)')
 
